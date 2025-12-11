@@ -10,14 +10,38 @@
  */
 class Solution {
 public:
-    ListNode* doubleIt(ListNode* head) {
-        if(head->val>4) head=new ListNode(0,head);
-        ListNode* temp=head;
-        while(temp){
-            temp->val=(temp->val*2)%10;
-            if(temp->next and temp->next->val>4) temp->val++;
-            temp=temp->next;
+    ListNode *reverse(ListNode *head)
+    {
+        ListNode*curr = head ;
+        ListNode *prev = NULL ;
+        ListNode *next = NULL ;
+        while(curr)
+        {
+            next = curr->next ;
+            curr->next = prev ;
+            prev = curr ;
+            curr = next ;
         }
-        return head;
+        return prev;
+    }
+    ListNode* doubleIt(ListNode* head) {
+        
+       ListNode *prev = reverse(head) ;
+       ListNode *temp = prev;
+       int carry = 0 , sum = 0 ; 
+       while(temp)
+       {    
+            temp->val = temp->val * 2 + carry;
+            carry = temp->val/10 ;
+            temp->val%=10;
+            if(temp->next == NULL && carry)
+            {
+                ListNode *node = new ListNode(carry) ;
+                temp->next =node ;
+                break ;
+            }
+            temp = temp->next ;  
+       }
+        return reverse(prev);
     }
 };
