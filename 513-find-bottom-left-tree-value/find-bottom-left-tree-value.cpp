@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    int ans = 0, maxi = -1 ;
+    int ans = 0, maxi = INT_MIN ;
     void in(TreeNode *root , int size)
     {
         if(!root) return ;
