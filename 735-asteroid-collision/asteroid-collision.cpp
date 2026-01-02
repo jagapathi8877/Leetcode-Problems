@@ -7,7 +7,7 @@ public:
             if(!ans.empty() && ans.back() > 0 && arr[i] < 0)
             {
                 while(!ans.empty() && ans.back() > 0 && ans.back() < abs(arr[i]) ) ans.pop_back() ;
-                if(!ans.empty() && ans.back() == -arr[i]) ans.pop_back() ;
+                if(!ans.empty() && ans.back() == abs(arr[i])) ans.pop_back() ;
                 else if(ans.empty() || ans.back() < 0) ans.push_back(arr[i]) ;
             }
             else ans.push_back(arr[i]) ;
