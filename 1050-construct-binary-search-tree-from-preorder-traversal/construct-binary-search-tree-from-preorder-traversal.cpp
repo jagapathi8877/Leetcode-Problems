@@ -21,10 +21,7 @@ public:
     TreeNode* bstFromPreorder(vector<int>& arr) {
         if(arr.size() == 0) return NULL;
         TreeNode *root = NULL;
-        for(auto i : arr) 
-        {
-            root = insert(root, i);
-        }
+        for(auto i : arr)  root = insert(root, i);
         return root;
     }
 };
