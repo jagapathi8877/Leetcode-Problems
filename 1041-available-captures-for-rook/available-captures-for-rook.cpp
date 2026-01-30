@@ -2,44 +2,40 @@ class Solution {
 public:
     int up(vector<vector<char>>& board , int col , int pos)
     {
-        int flag = 0 ;
         for(int row = pos ; row >= 0 ; row--)  
         {
-            if(board[row][col] == 'p' && flag == 0) return 1;
-            else if(board[row][col] == 'B') flag = 1;
+            if(board[row][col] == 'p') return 1;
+            else if(board[row][col] == 'B') return 0 ;
         }
         return 0 ;
     }
 
     int down(vector<vector<char>>& board , int col , int pos)
     {
-        int flag = 0 ;
         for(int row = pos ; row < board.size(); row++)  
         {
-            if(board[row][col] == 'p' && flag == 0) return 1;
-            else if(board[row][col] == 'B') flag = 1;
+            if(board[row][col] == 'p') return 1;
+            else if(board[row][col] == 'B') return 0 ;
         }
         return 0 ;
     }
 
     int left(vector<vector<char>>& board , int row , int pos)
     {
-        int flag = 0 ;
         for(int col = pos ; col >= 0 ; col--)  
         {
-            if(board[row][col] == 'p' && flag == 0) return 1;
-            else if(board[row][col] == 'B') flag = 1;
+            if(board[row][col] == 'p') return 1;
+            else if(board[row][col] == 'B') return 0;
         }
         return 0 ;
     }
 
     int right(vector<vector<char>>& board , int row , int pos)
     {
-        int flag = 0 ;
         for(int col = pos ; col < board[0].size(); col++)  
         {
-            if(board[row][col] == 'p' && flag == 0 ) return 1;
-            else if(board[row][col] == 'B') flag = 1;
+            if(board[row][col] == 'p') return 1;
+            else if(board[row][col] == 'B') return 0;
         }
         return 0 ;
     }
