@@ -19,16 +19,16 @@ public:
         while(!q.empty())
         {
             int n = q.size() ;
-            vector<int>arr ;
+            int maxi = INT_MIN;
             for(int i = 0 ; i < n ; i++)
             {
                 TreeNode *temp = q.front();
                 q.pop();
-                arr.push_back(temp->val);
+                maxi = max(maxi , temp->val);
                 if(temp->left) q.push(temp->left);
                 if(temp->right) q.push(temp->right);
             }
-            ans.push_back(*max_element(arr.begin() , arr.end()));
+            ans.push_back(maxi);
         }
         return ans ;
     }
