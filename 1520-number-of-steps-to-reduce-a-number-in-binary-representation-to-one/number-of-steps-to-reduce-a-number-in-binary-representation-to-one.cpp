@@ -10,11 +10,7 @@ public:
             int j = s.size() - 2 ;
             while(j >= 0 && s[j] != '0') s[j--] = '0';
             if(j >= 0) s[j] = '1';
-            else
-            {
-                for(int i = 0 ; i < s.size() ; i++) s[i] = '0' ; 
-                s = '1' + s ;
-            }
+            else s = '1' + s ;
          }
          else s.pop_back();
          ans++;
