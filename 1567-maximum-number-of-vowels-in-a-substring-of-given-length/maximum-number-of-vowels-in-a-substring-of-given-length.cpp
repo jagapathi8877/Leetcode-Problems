@@ -8,8 +8,7 @@ public:
         int j  = 0 ;
         for(int i = k ; i < s.size() ; i++)
         {
-            if(a.find(s[j]) != string::npos) cnt--;
-            j++;
+            if(a.find(s[i-k]) != string::npos) cnt--;
             if(a.find(s[i]) != string::npos) cnt++;
             maxi = max(maxi , cnt) ;
         }
